@@ -1,7 +1,6 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:xo/screens/multi_player.dart';
-import 'package:xo/screens/settings.dart';
-import 'package:xo/screens/single_player.dart';
+import 'package:xo/widget/button.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,14 +14,6 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(100, 240, 139, 124),
-      appBar: AppBar(
-        title: Text(
-          "Welcome",
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 30),
-        ),
-        backgroundColor: Colors.lime,
-      ),
       body: Column(
         children: [
           Row(
@@ -42,25 +33,13 @@ class _Home extends State<Home> {
           ),
           Row(
             children: [
-              Container(
+              button(
                 width: 385,
-                height: 50,
-                child: ElevatedButton.icon(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Single()),
-                  ),
-                  label: const Text('Single Player'),
-                  icon: const Icon(Icons.person),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 167, 68, 101),
-                    textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
+                hight: 50,
+                color: Color.fromARGB(255, 167, 68, 101),
+                icon: Icon(Icons.person),
+                name: "Single Player",
+              )
             ],
           ),
           SizedBox(
@@ -68,25 +47,13 @@ class _Home extends State<Home> {
           ),
           Row(
             children: [
-              Container(
+              button(
                 width: 385,
-                height: 50,
-                child: ElevatedButton.icon(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Multi()),
-                  ),
-                  label: const Text('Multiplayer'),
-                  icon: const Icon(Icons.people),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 167, 68, 101),
-                    textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
+                hight: 50,
+                color: Color.fromARGB(255, 167, 68, 101),
+                icon: Icon(Icons.people),
+                name: "MultiPlayer",
+              )
             ],
           ),
           SizedBox(
@@ -94,25 +61,13 @@ class _Home extends State<Home> {
           ),
           Row(
             children: [
-              Container(
+              button(
                 width: 385,
-                height: 50,
-                child: ElevatedButton.icon(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Settings()),
-                  ),
-                  label: Text('Settings'),
-                  icon: Icon(Icons.settings),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 167, 68, 101),
-                    textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
+                hight: 50,
+                color: Color.fromARGB(255, 167, 68, 101),
+                icon: Icon(Icons.settings),
+                name: "Settings",
+              )
             ],
           ),
         ],
