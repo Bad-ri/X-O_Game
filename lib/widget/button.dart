@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:xo/function/functionality.dart';
 import 'package:xo/screens/multi_player.dart';
 import 'package:xo/screens/settings.dart';
 import 'package:xo/screens/single_player.dart';
@@ -53,6 +56,11 @@ class button extends StatelessWidget {
           }
           if (name == "Home") {
             Navigator.pop(context);
+          }
+          if (name == "Clear") {
+            start = 1;
+            win = "";
+            x = "";
           }
         },
       ),
