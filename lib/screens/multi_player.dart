@@ -107,8 +107,8 @@ class _MultiState extends State<Multi> {
                         box[i] = '';
                         box2[i] = '';
                         start = 1;
-                        win = '';
-                        x = '';
+                        win = "";
+                        x = "";
                       }
                     });
                   }),

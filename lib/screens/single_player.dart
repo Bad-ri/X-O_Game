@@ -92,6 +92,29 @@ class _SingleState extends State<Single> {
                 width: 385,
                 height: 50,
                 child: ElevatedButton.icon(
+                  icon: Icon(Icons.laptop_chromebook_sharp),
+                  label: Text("Choose",
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontFamily: "Magic1",
+                          color: Color.fromARGB(255, 48, 47, 47))),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 167, 68, 101),
+                  ),
+                  onPressed: () => dialogBuilder(context),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Row(
+            children: [
+              Container(
+                width: 385,
+                height: 50,
+                child: ElevatedButton.icon(
                   icon: Icon(Icons.clear),
                   label: Text("Clear",
                       style: TextStyle(
@@ -107,8 +130,8 @@ class _SingleState extends State<Single> {
                         box[i] = '';
                         box2[i] = '';
                         start = 1;
-                        win = '';
-                        x = '';
+                        win = "";
+                        x = "";
                       }
                     });
                   }),
@@ -132,6 +155,41 @@ class _SingleState extends State<Single> {
           ),
         ],
       ),
+    );
+  }
+
+  Future<void> dialogBuilder(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Choose'),
+          content:
+              const Text('choose what do you wou want olay with ( X OR O )'),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('X'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                start = 1;
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('O'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                start = 0;
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

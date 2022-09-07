@@ -4,6 +4,7 @@ List<String> box = ['', '', '', '', '', '', '', '', ''];
 List<String> box2 = ['', '', '', '', '', '', '', '', ''];
 
 int start = 1;
+int draw = 0;
 String win = "";
 String x = "";
 int x_score = 0;
@@ -19,6 +20,7 @@ int Func(int I) {
   }
   box[I] = "$start";
   //print(box[I]);
+  draw++;
   winner_cheker();
 
   if (start % 2 == 0) {
@@ -62,6 +64,9 @@ String winner_cheker() {
   if (win == "O") {
     o_score++;
     x = "The winner is " + win;
+  }
+  if (draw == 9 && win == "") {
+    x = "Draw";
   }
   return win;
 }
