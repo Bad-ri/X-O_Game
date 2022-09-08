@@ -20,18 +20,40 @@ class _SingleState extends State<Single> {
             style: TextStyle(fontSize: 30, fontFamily: "Magic1")),
         backgroundColor: Color.fromARGB(255, 53, 238, 77),
       ),
-      backgroundColor: Color.fromRGBO(65, 163, 126, 1),
+      backgroundColor: Color.fromRGBO(31, 31, 31, 1),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                "First Player : " + "$x_score",
-                style: TextStyle(fontSize: 30, fontFamily: "Magic1"),
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                width: 110,
+                height: 70,
+                color: Color.fromRGBO(31, 31, 31, 1),
+                child: Text(
+                  "First Player\n\n" +
+                      "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                      "$x_score",
+                  style: TextStyle(
+                      fontSize: 15, fontFamily: "Magic1", color: Colors.white),
+                ),
               ),
-              Text("Second Player : " + "$o_score",
-                  style: TextStyle(fontSize: 30, fontFamily: "Magic1")),
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                width: 120,
+                height: 70,
+                color: Color.fromRGBO(31, 31, 31, 1),
+                child: Text(
+                    "Second Player\n\n" +
+                        "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
+                        "$o_score",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontFamily: "Magic1",
+                        color: Colors.white)),
+              ),
             ],
           ),
           Row(
@@ -39,17 +61,19 @@ class _SingleState extends State<Single> {
             children: [
               Text(
                 "$x",
-                style: TextStyle(fontSize: 40, fontFamily: "Magic1"),
+                style: TextStyle(
+                    fontSize: 40, fontFamily: "Magic1", color: Colors.white),
               ),
             ],
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 100),
+                // margin: EdgeInsets.only(left: 100),
                 width: 250,
                 height: 250,
                 child: GridView.count(
@@ -59,7 +83,7 @@ class _SingleState extends State<Single> {
                       child: InkWell(
                         onTap: () {
                           setState(() {
-                            Func(index);
+                            Func2(index);
                           });
                         },
                         child: Container(
@@ -67,13 +91,15 @@ class _SingleState extends State<Single> {
                             height: 20,
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    color: Color.fromARGB(255, 255, 255, 255),
                                     width: 5)),
                             child: Center(
                               child: Text(
                                 box2[index],
-                                style:
-                                    TextStyle(fontSize: 30, color: Colors.red),
+                                style: TextStyle(
+                                    fontSize: 35,
+                                    fontFamily: "Magic1",
+                                    color: Color.fromARGB(255, 91, 231, 48)),
                               ),
                             )),
                       ),
@@ -87,32 +113,34 @@ class _SingleState extends State<Single> {
             height: 30,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 385,
-                height: 50,
-                child: ElevatedButton.icon(
-                  icon: Icon(Icons.laptop_chromebook_sharp),
-                  label: Text("Choose",
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: "Magic1",
-                          color: Color.fromARGB(255, 48, 47, 47))),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 167, 68, 101),
-                  ),
-                  onPressed: () => dialogBuilder(context),
-                ),
-              ),
+              // Container(
+              //   width: 200,
+              //   height: 50,
+              //   child: ElevatedButton.icon(
+              //     icon: Icon(Icons.laptop_chromebook_sharp),
+              //     label: Text("Choose",
+              //         style: TextStyle(
+              //             fontSize: 15,
+              //             fontFamily: "Magic1",
+              //             color: Color.fromARGB(255, 255, 255, 255))),
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: Color.fromRGBO(163, 64, 97, 1),
+              //     ),
+              //     onPressed: () => dialogBuilder(context),
+              //   ),
+              // ),
             ],
           ),
           SizedBox(
             height: 15,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 385,
+                width: 200,
                 height: 50,
                 child: ElevatedButton.icon(
                   icon: Icon(Icons.clear),
@@ -120,9 +148,9 @@ class _SingleState extends State<Single> {
                       style: TextStyle(
                           fontSize: 15,
                           fontFamily: "Magic1",
-                          color: Color.fromARGB(255, 48, 47, 47))),
+                          color: Color.fromARGB(255, 243, 240, 240))),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 167, 68, 101),
+                    backgroundColor: Color.fromRGBO(63, 44, 131, 1),
                   ),
                   onPressed: (() {
                     setState(() {
@@ -132,6 +160,7 @@ class _SingleState extends State<Single> {
                         start = 1;
                         win = "";
                         x = "";
+                        draw = 0;
                       }
                     });
                   }),
@@ -142,17 +171,6 @@ class _SingleState extends State<Single> {
           SizedBox(
             height: 15,
           ),
-          Row(
-            children: [
-              button(
-                width: 385,
-                hight: 50,
-                color: Color.fromARGB(255, 167, 68, 101),
-                icon: Icon(Icons.person),
-                name: "Home",
-              )
-            ],
-          ),
         ],
       ),
     );
@@ -160,36 +178,35 @@ class _SingleState extends State<Single> {
 
   Future<void> dialogBuilder(BuildContext context) {
     return showDialog<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Choose'),
-          content:
-              const Text('choose what do you wou want olay with ( X OR O )'),
-          actions: <Widget>[
-            TextButton(
-              style: TextButton.styleFrom(
-                textStyle: Theme.of(context).textTheme.labelLarge,
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Choose'),
+            content:
+                const Text('choose what do you wou want olay with ( X OR O )'),
+            actions: <Widget>[
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge,
+                ),
+                child: const Text('X'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  start = 1;
+                },
               ),
-              child: const Text('X'),
-              onPressed: () {
-                Navigator.of(context).pop();
-                start = 1;
-              },
-            ),
-            TextButton(
-              style: TextButton.styleFrom(
-                textStyle: Theme.of(context).textTheme.labelLarge,
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge,
+                ),
+                child: const Text('O'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  start = 0;
+                },
               ),
-              child: const Text('O'),
-              onPressed: () {
-                Navigator.of(context).pop();
-                start = 0;
-              },
-            ),
-          ],
-        );
-      },
-    );
+            ],
+          );
+        });
   }
 }

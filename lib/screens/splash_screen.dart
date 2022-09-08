@@ -64,7 +64,7 @@ class _splash extends State<splash> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
                 Text(
                   "Loading...",
