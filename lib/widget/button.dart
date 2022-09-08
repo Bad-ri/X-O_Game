@@ -31,7 +31,7 @@ class button extends StatelessWidget {
             style: TextStyle(
                 fontSize: 15,
                 fontFamily: "Magic1",
-                color: Color.fromARGB(255, 48, 47, 47))),
+                color: Color.fromRGBO(235, 235, 235, 1))),
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
         ),
