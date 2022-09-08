@@ -28,7 +28,7 @@ class _MultiState extends State<Multi> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 50),
+                margin: EdgeInsets.only(top: 40),
                 width: 110,
                 height: 70,
                 color: Color.fromRGBO(31, 31, 31, 1),
@@ -56,6 +56,17 @@ class _MultiState extends State<Multi> {
               ),
             ],
           ),
+          SizedBox(
+            height: 5,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text("$turn",
+                  style: TextStyle(
+                      fontSize: 30, fontFamily: "Magic1", color: Colors.white)),
+            ],
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -67,7 +78,7 @@ class _MultiState extends State<Multi> {
             ],
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -160,6 +171,7 @@ class _MultiState extends State<Multi> {
                         start = 1;
                         win = "";
                         x = "";
+                        draw = 0;
                       }
                     });
                   }),

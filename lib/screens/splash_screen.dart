@@ -38,7 +38,7 @@ class _splash extends State<splash> with TickerProviderStateMixin {
     return Scaffold(
       backgroundColor: Color.fromRGBO(31, 31, 31, 1),
       body: Container(
-        //margin: EdgeInsets.only(left: 100),
+        margin: EdgeInsets.only(top: 250),
         child: Column(
           children: [
             Row(
@@ -64,7 +64,7 @@ class _splash extends State<splash> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 25,
+                  height: 40,
                 ),
                 Text(
                   "Loading...",

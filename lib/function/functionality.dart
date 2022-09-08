@@ -7,6 +7,8 @@ List<String> box2 = ['', '', '', '', '', '', '', '', ''];
 
 int start = 1;
 int draw = 0;
+int draw2 = 0;
+String turn = "";
 String win = "";
 String x = "";
 int x_score = 0;
@@ -18,9 +20,11 @@ int Func(int I) {
   if (box[I] == '') {
     if (start == 1) {
       box2[I] = "X";
+      turn = "Player O turn";
     }
     if (start == 0) {
       box2[I] = "O";
+      turn = "Player X turn";
     }
     box[I] = "$start";
     draw++;
@@ -50,7 +54,7 @@ int Func2(int I) {
       box2[I] = "O";
     }
     box[I] = "$start";
-    draw++;
+    draw2++;
     winner_cheker();
 
     //for (int i = 0; i < 9; i++) {
@@ -58,11 +62,10 @@ int Func2(int I) {
       pc = 0;
       for (int j = 0; j < 9; j++) {
         Random random = new Random();
-        int randomNumber = random.nextInt(10);
-        if (box2[randomNumber] == '') {
-          box2[randomNumber] = "O";
-          box[randomNumber] = "0";
-
+        int randomNumber = random.nextInt(9);
+        if (box[randomNumber] == '') {
+          box2[randomNumber] = 'O';
+          box[randomNumber] = '0';
           pc++;
           break;
         }
@@ -147,13 +150,20 @@ String winner_cheker() {
   if (win == "X") {
     x_score++;
     x = "The winner is " + win;
+    turn = "";
   }
   if (win == "O") {
     o_score++;
     x = "The winner is " + win;
+    turn = "";
   }
   if (draw == 9 && win == "") {
     x = "Draw";
+    turn = "";
+  }
+  if (draw2 > 4 && win == "") {
+    x = "Draw game";
+    turn = "";
   }
   return win;
 }

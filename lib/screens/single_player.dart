@@ -160,7 +160,7 @@ class _SingleState extends State<Single> {
                         start = 1;
                         win = "";
                         x = "";
-                        draw = 0;
+                        draw2 = 0;
                       }
                     });
                   }),
