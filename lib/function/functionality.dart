@@ -1,13 +1,16 @@
 // ignore_for_file: unnecessary_string_interpolations, avoid_print
 
 import 'dart:math';
+import 'dart:ui';
 
 List<String> box = ['', '', '', '', '', '', '', '', ''];
 List<String> box2 = ['', '', '', '', '', '', '', '', ''];
-
+Color color = Color.fromRGBO(31, 31, 31, 1);
+Color color2 = Color.fromRGBO(31, 31, 31, 1);
 int start = 1;
 int draw = 0;
 int draw2 = 0;
+int c = 0;
 String turn = "";
 String win = "";
 String x = "";
@@ -21,10 +24,18 @@ int Func(int I) {
     if (start == 1) {
       box2[I] = "X";
       turn = "Player O turn";
+      color = Color.fromRGBO(175, 12, 12, 1);
+      color2 = Color.fromRGBO(31, 31, 31, 1);
+
+      c = 1;
     }
     if (start == 0) {
       box2[I] = "O";
       turn = "Player X turn";
+      color2 = Color.fromRGBO(15, 116, 23, 1);
+      color = Color.fromRGBO(31, 31, 31, 1);
+
+      c = 2;
     }
     box[I] = "$start";
     draw++;
@@ -151,19 +162,47 @@ String winner_cheker() {
     x_score++;
     x = "The winner is " + win;
     turn = "";
+    color = Color.fromRGBO(31, 31, 31, 1);
+    color2 = Color.fromRGBO(31, 31, 31, 1);
+    for (int g = 0; g < 9; g++) {
+      if (box[g] == '') {
+        box[g] = "5";
+      }
+    }
   }
   if (win == "O") {
     o_score++;
     x = "The winner is " + win;
     turn = "";
+    color = Color.fromRGBO(31, 31, 31, 1);
+    color2 = Color.fromRGBO(31, 31, 31, 1);
+    for (int g = 0; g < 9; g++) {
+      if (box[g] == '') {
+        box[g] = "5";
+      }
+    }
   }
   if (draw == 9 && win == "") {
     x = "Draw";
     turn = "";
+    color = Color.fromRGBO(31, 31, 31, 1);
+    color2 = Color.fromRGBO(31, 31, 31, 1);
+    for (int g = 0; g < 9; g++) {
+      if (box[g] == '') {
+        box[g] = "5";
+      }
+    }
   }
   if (draw2 > 4 && win == "") {
     x = "Draw game";
     turn = "";
+    color = Color.fromRGBO(31, 31, 31, 1);
+    color2 = Color.fromRGBO(31, 31, 31, 1);
+    for (int g = 0; g < 9; g++) {
+      if (box[g] == '') {
+        box[g] = "5";
+      }
+    }
   }
   return win;
 }

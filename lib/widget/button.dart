@@ -62,6 +62,10 @@ class button extends StatelessWidget {
             win = "";
             x = "";
           }
+          if (name == "Clear Score") {
+            o_score = 0;
+            x_score = 0;
+          }
         },
       ),
     );

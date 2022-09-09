@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:xo/function/functionality.dart';
-import '../widget/button.dart';
 
 class Multi extends StatefulWidget {
   const Multi({super.key});
@@ -53,6 +52,26 @@ class _MultiState extends State<Multi> {
                         fontSize: 15,
                         fontFamily: "Magic1",
                         color: Colors.white)),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                // margin: EdgeInsets.only(top: 40),
+                width: 110,
+                height: 20,
+                color: color2,
+              ),
+              Container(
+                // margin: EdgeInsets.only(top: 50),
+                width: 120,
+                height: 20,
+                color: color,
               ),
             ],
           ),
@@ -171,7 +190,11 @@ class _MultiState extends State<Multi> {
                         start = 1;
                         win = "";
                         x = "";
+                        turn = "";
                         draw = 0;
+                        c = 0;
+                        color = Color.fromRGBO(31, 31, 31, 1);
+                        color2 = Color.fromRGBO(31, 31, 31, 1);
                       }
                     });
                   }),
@@ -194,7 +217,7 @@ class _MultiState extends State<Multi> {
           return AlertDialog(
             title: const Text('Choose'),
             content:
-                const Text('choose what do you wou want olay with ( X OR O )'),
+                const Text('Choose what do you wou want olay with ( X OR O )'),
             actions: <Widget>[
               TextButton(
                 style: TextButton.styleFrom(

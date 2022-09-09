@@ -46,7 +46,7 @@ class _SingleState extends State<Single> {
                 height: 70,
                 color: Color.fromRGBO(31, 31, 31, 1),
                 child: Text(
-                    "Second Player\n\n" +
+                    "AI Player\n\n" +
                         "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" +
                         "$o_score",
                     style: TextStyle(
@@ -160,6 +160,7 @@ class _SingleState extends State<Single> {
                         start = 1;
                         win = "";
                         x = "";
+                        turn = "";
                         draw2 = 0;
                       }
                     });
